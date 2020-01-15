@@ -124,7 +124,6 @@ func (s *SixEightCome) simulate(r *Round) {
 				// remove the come bet.
 				// >> let later code handle moving up come bet
 				delete(r.comeBets, roll.Value())
-
 				s.Debugf("\twon come(%d): +%d\n", roll.Value(), v+v)
 			}
 
@@ -140,19 +139,19 @@ func (s *SixEightCome) simulate(r *Round) {
 			}
 
 			// check there's no duplicate 6/8 come bets
-			for _, v := range []int{6, 8} {
-				if _, ok := r.comeBets[v]; ok {
-					if v, okk := r.placeBets[v]; okk {
+			for _, roll := range []int{6, 8} {
+				if _, ok := r.comeBets[roll]; ok {
+					if bet, okk := r.placeBets[roll]; okk {
 						// remove the placebet
-						r.Amount += v
-						delete(r.placeBets, v)
+						r.Amount += bet
+						delete(r.placeBets, roll)
 					}
 				} else {
-					if _, ok := r.placeBets[v]; !ok {
+					if _, ok := r.placeBets[roll]; !ok {
 						// add place bet, nearest multiple of 6 from minBet for 6/8
 						bet := int(math.Ceil(float64(r.minBet)/float64(6))) * 6
 						r.Amount -= bet
-						r.placeBets[v] = bet
+						r.placeBets[roll] = bet
 					}
 				}
 			}
