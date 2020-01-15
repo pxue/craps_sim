@@ -33,7 +33,7 @@ func (n *Naive) getOddBet(point int) int {
 	return 0
 }
 
-func (n *Naive) simulate(r *round) int {
+func (n *Naive) simulate(r *Round) int {
 	roll := NewRoll()
 	//fmt.Printf("round %d: %s (point %d)\n", r.n, roll, point)
 
@@ -78,7 +78,7 @@ func (n *Naive) simulate(r *round) int {
 			v := roll.Value()
 			r.point = &v
 		}
-		r.n++
+		r.Rolls++
 		return n.simulate(r)
 	}
 
@@ -88,7 +88,7 @@ func (n *Naive) simulate(r *round) int {
 
 func (n *Naive) Simulate() {
 	g := &boolgen{src: rand.NewSource(time.Now().UnixNano())}
-	var rounds []*round
+	var rounds []*Round
 
 	rolls := 0
 	comeout := 0
@@ -98,7 +98,7 @@ func (n *Naive) Simulate() {
 	to := 0 // # of odds took
 
 	for comeout < n.maxRolls && rolls < n.maxRolls {
-		r := &round{
+		r := &Round{
 			takeOdds: g.Bool(),
 		}
 		if r.takeOdds {
@@ -112,7 +112,7 @@ func (n *Naive) Simulate() {
 		} else if v < 0 {
 			l++
 		}
-		rolls += r.n
+		rolls += r.Rolls
 		vv += v
 
 		if vv < n.maxLoss {

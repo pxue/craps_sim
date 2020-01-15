@@ -1,8 +1,18 @@
 package simulate
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type SixEightCome struct {
+	Debug bool
+}
+
+func (s *SixEightCome) Debugf(format string, args ...interface{}) {
+	if s.Debug {
+		fmt.Printf(format, args...)
+	}
 }
 
 /* the strategy:
@@ -12,152 +22,188 @@ type SixEightCome struct {
 * play come to get 4 numbers working at the same time.
 * play pass if no come out roll
 *
-* $30 per roller.
-* if profit, play the odds.
+* $60 per roller.
+* if profit, play the odds. TODO
+* maybe combine with field bets
  */
-func (s *SixEightCome) simulate(r *round) {
+func (s *SixEightCome) simulate(r *Round) {
 	for {
 		// stopping conditions.
-		// TODO: other?
 		roll := NewRoll()
-		fmt.Printf("rolled: %s\n", roll)
+		s.Debugf("rolled: %s\n", roll)
 
+		r.Rolls++
+
+		// point established?
 		switch roll.Value() {
 		case 7:
-			if r.point == nil {
-				r.amount += r.passBet * 2
-			}
-			r.passBet = 0
-			// "lose" clear the board, comeBets and placeBets
+			// clear comeBets, comeBets are always active
 			for k, _ := range r.comeBets {
 				delete(r.comeBets, k)
 			}
-			for k, _ := range r.placeBets {
-				delete(r.placeBets, k)
+
+			if r.point == nil {
+				// no point established yet. pay 1x passline bet.
+				// and keep the passbet on.
+				r.Amount += r.passBet
 			}
 
-			// exit.
-			return
+			if r.point != nil {
+				// collect comebet win.
+				r.Amount += (r.comeBet * 2)
+
+				// don't really need to clean up because we're exiting
+				s.Debugf("\t7 rolled before %d\n\n", *r.point)
+				return
+			}
 		case 11:
-			if r.point == nil {
-				// clear passBet
-				r.amount += r.passBet * 2
-				r.passBet = 0
+			if r.point == nil && r.passBet > 0 {
+				// passline winner, pocket and keep passBet on
+				r.Amount += r.passBet
+			}
+			if r.point != nil && r.comeBet > 0 {
+				// pay come bet, pocket and keep comeBet on
+				r.Amount += r.comeBet
 			}
 		case 2, 3, 12:
 			// clear come and place bets.
-			r.comeBet = 0
 			if r.point == nil {
 				r.passBet = 0
 			}
-
-			if r.point != nil && len(r.placeBets)+len(r.comeBets) < 4 {
-				// most likely need a come
-				r.comeBet = 5
-				r.amount -= 5
+			if r.point != nil {
+				r.comeBet = 0
+			}
+			if r.point != nil && r.active() < 4 {
+				// if no point has established.
+				// and we don't have 4 numbers established yet.
+				// bet come again.
+				r.bet(&r.comeBet, r.minBet)
 			}
 		default:
+			// check place bet wins
+			// TODO: press place bets
+			if v, ok := r.placeBets[roll.Value()]; ok && v > 0 && r.point != nil {
+				pay := 0
+				switch roll.Value() {
+				case 4, 10:
+					// pays out 9 to 5
+					pay = (9 * v / 5)
+				case 5, 9:
+					// pays out 7 to 5
+					pay = (7 * v / 5)
+				case 6, 8:
+					// pays out 7 to 6
+					pay = (7 * v / 6)
+				}
+				r.Amount += pay
+				r.Hits++
+				s.Debugf("\twon place(%d): +%d\n", roll.Value(), pay)
+			}
+
 			// 4, 5, 6, 8, 9, 10
 			// you should never have 6 or 8 vacated.
 			if r.point == nil {
 				// this was a comeout roll.
-				point := roll.Value()
-				r.point = &point
-				fmt.Printf("\tpoint establisehd! %d\n", point)
+				r.setPoint(roll.Value())
+				s.Debugf("\tpoint establisehd! %d\n", roll.Value())
 			} else {
 				// point exists, is it same as rolled value?
 				if *r.point == roll.Value() {
 					// clear the point
-					fmt.Printf("\tpoint won! %d\n", *r.point)
+					s.Debugf("\tpoint won! %d\n", *r.point)
 					r.point = nil
 				}
 			}
 
-			// collect place bet wins
-			if v, ok := r.placeBets[roll.Value()]; ok && v > 0 {
-				// pays out 7:6
-				r.amount += 7
-				// keep the bet on.
-				fmt.Printf("\twon place(%d): +%d\n", roll.Value(), 7)
+			// come bets pays out 1:1
+			// TODO: come odds
+			if v, ok := r.comeBets[roll.Value()]; ok && v > 0 {
+				r.Amount += (v + v) // pays 1:1, collect original
+				r.Hits++
+
+				// remove the come bet.
+				// >> let later code handle moving up come bet
+				delete(r.comeBets, roll.Value())
+
+				s.Debugf("\twon come(%d): +%d\n", roll.Value(), v+v)
 			}
 
-			// collect come bet wins
-			if v, ok := r.comeBets[roll.Value()]; ok && v > 0 {
-				// collect 1:1
-				r.amount += v * 2
-				delete(r.comeBets, roll.Value())
-				fmt.Printf("\twon come(%d): +%d\n", roll.Value(), v*2)
+			// move up comeBet
+			if r.comeBet != 0 {
+				// new come bet point is established.
+				// move the bet up to comeBets
+				// >> take back the already placed come bet.
+				r.comeBets[roll.Value()] = r.comeBet
+
+				// >> let later code handle re-betting
+				r.comeBet = 0
+			}
+
+			// check there's no duplicate 6/8 come bets
+			for _, v := range []int{6, 8} {
+				if _, ok := r.comeBets[v]; ok {
+					if v, okk := r.placeBets[v]; okk {
+						// remove the placebet
+						r.Amount += v
+						delete(r.placeBets, v)
+					}
+				} else {
+					if _, ok := r.placeBets[v]; !ok {
+						// add place bet, nearest multiple of 6 from minBet for 6/8
+						bet := int(math.Ceil(float64(r.minBet)/float64(6))) * 6
+						r.Amount -= bet
+						r.placeBets[v] = bet
+					}
+				}
+			}
+
+			// Let's try something new to increase our hit%
+			// if we have 4 numbers already, let's place on 4 and 10 if we are up.
+			if r.active() == 4 && r.Amount >= r.initAmount {
+				// only do this if we've loaded up.
+				// TODO: check pctHits threshold, ie. only do this if our hit
+				// % is less than a certain amount
+				if _, ok := r.comeBets[4]; !ok {
+					r.Amount -= r.minBet
+					r.placeBets[4] = r.minBet
+				} else {
+					if _, ok := r.comeBets[10]; !ok {
+						r.Amount -= r.minBet
+						r.placeBets[10] = r.minBet
+					}
+				}
 			}
 
 			if r.comeBet == 0 {
 				// if the point has not been established, we can't do comeBet
-				if r.point != nil && (len(r.placeBets)+len(r.comeBets) < 4) {
-					r.comeBet = 5
-					r.amount -= 5
+				if r.point != nil && r.active() < 4 {
+					r.bet(&r.comeBet, r.minBet)
 				}
-				// TODO: use a pass bet
-			} else {
-				// move the bet up to comeBets
-				if r.comeBet > 0 {
-					// move it up to point.
-					r.comeBets[roll.Value()] = 5 // always 5
-					r.comeBet = 0
-
-					// if roll is 6 or 8. pull down the 6 or 8 we don't need it
-					// twice
-
-					if roll.Value() == 6 || roll.Value() == 8 {
-						r.amount += r.placeBets[roll.Value()]
-						fmt.Printf("\t pulled down place bet(%d): +6\n", roll.Value())
-						delete(r.placeBets, roll.Value())
-					}
-				}
-				// now check how many number we've got working.
-				if r.point != nil && len(r.placeBets)+len(r.comeBets) < 4 {
-					// most likely need a come
-					r.comeBet = 5
-					r.amount -= 5
-				}
-			}
-			fmt.Printf("\tcome bets: %+v\n", r.comeBets)
-
-			// make sure placeBets are on only if there isn't a come bet
-			// on 6 or 8
-			if v, ok := r.placeBets[6]; !ok || v == 0 {
-				if _, ok := r.comeBets[6]; !ok {
-					r.placeBets[6] = 6
-					r.amount -= 6
-				}
-			}
-			if v, ok := r.placeBets[8]; !ok || v == 0 {
-				if _, ok := r.comeBets[8]; !ok {
-					r.placeBets[8] = 6
-					r.amount -= 6
-				}
+				// TODO: pass bet?
 			}
 
-			// check again, if placeBets + comeBets == 4, make sure
-			// we don't have a come bet again.
-			if len(r.placeBets)+len(r.comeBets) == 4 {
-				r.amount += r.comeBet
-				r.comeBet = 0
-			}
-			fmt.Printf("\tplace bets: %+v\n", r.placeBets)
-
-			fmt.Printf("\tcome: -%d\n", r.comeBet)
-			fmt.Printf("\tamount: %d -> profit(%d)\n\n", r.amount, r.amount-30)
 		}
+		s.Debugf("\tplace bets: %+v\n", r.placeBets)
+		s.Debugf("\tcome bets: %+v\n", r.comeBets)
+		s.Debugf("\tcome: %d\n", r.comeBet)
+		s.Debugf("\tamount: %d\n\n", r.Amount)
 	}
 }
 
-func (s *SixEightCome) Simulate() int {
-	r := &round{
-		placeBets: map[int]int{},
-		comeBets:  map[int]int{},
-		amount:    30, // per shooter
+func (s *SixEightCome) Simulate(amount int) *Round {
+	r := &Round{
+		placeBets:  map[int]int{},
+		comeBets:   map[int]int{},
+		minBet:     15,
+		initAmount: amount,
+		Amount:     amount, // amount per shooter
 	}
 	s.simulate(r)
-	fmt.Printf("shooter finished: %d\n", r.amount)
 
-	return r.amount
+	s.Debugf("shooter finished with $%d.\nwe hit %d times out of %d rolls.\ncost per roll(%.2f)\n",
+		r.Amount, r.Hits, r.Rolls,
+		(float64(amount)-float64(r.Amount))/float64(r.Rolls),
+	)
+
+	return r
 }
