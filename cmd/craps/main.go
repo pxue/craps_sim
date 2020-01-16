@@ -1,6 +1,11 @@
 package main
 
 import (
+	"encoding/csv"
+	"fmt"
+	"log"
+	"os"
+
 	"github.com/pxue/craps/simulate"
 )
 
@@ -11,7 +16,7 @@ type Out struct {
 }
 
 func main() {
-	s := simulate.SixEightCome{Debug: true}
+	s := simulate.SixEightCome{Debug: false}
 	// start with 300, play 10 rounds
 
 	perRound := 100
@@ -19,10 +24,18 @@ func main() {
 	maxRolls := 3 * 60 // 1 roll per minute, 3h max.
 	maxProfit := startAmount * 2
 
-	//f, _ := os.Create("out.csv")
-	//writer := csv.NewWriter(f)
+	f, _ := os.Create("out.csv")
+	writer := csv.NewWriter(f)
+	writer.Write([]string{
+		"# of Rounds",
+		"# of Hits",
+		"# of Rolls",
+		"% Hits",
+		"$ Bank",
+		"$ Profit",
+	})
 
-	for i := 0; i < 1; i++ {
+	for i := 0; i < 1000; i++ {
 		amount := startAmount
 		aRolls := 0
 		aRound := 0
@@ -41,24 +54,26 @@ func main() {
 			s.Debugf("round %d finished with: %d.\n\n", aRound, amount)
 			pctHits := float64(aHits*100) / float64(aRolls)
 			s.Debugf("\nafter %d rounds, bank $%d/%d, %d/%d (%d%%) rolls was hits.\n", aRound, amount, startAmount, aHits, aRolls, int(pctHits))
-
 		}
 
-		//writer.Write([]string{
-		//fmt.Sprintf("%d", aRound),
-		//fmt.Sprintf("%d", aHits),
-		//fmt.Sprintf("%d", aRolls),
-		//fmt.Sprintf("%d", amount),
-		//})
-		//writer.Flush()
+		pctHits := float64(aHits) / float64(aRolls)
+		writer.Write([]string{
+			fmt.Sprintf("%d", aRound),
+			fmt.Sprintf("%d", aHits),
+			fmt.Sprintf("%d", aRolls),
+			fmt.Sprintf("%.2f", pctHits),
+			fmt.Sprintf("%d", amount),
+			fmt.Sprintf("%d", amount-startAmount),
+		})
+		writer.Flush()
 	}
 
 	// Write any buffered data to the underlying writer (standard output).
-	//writer.Flush()
+	writer.Flush()
 
-	//if err := writer.Error(); err != nil {
-	//log.Fatal(err)
-	//}
-	//f.Close()
+	if err := writer.Error(); err != nil {
+		log.Fatal(err)
+	}
+	f.Close()
 
 }

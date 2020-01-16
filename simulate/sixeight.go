@@ -158,20 +158,20 @@ func (s *SixEightCome) simulate(r *Round) {
 
 			// Let's try something new to increase our hit%
 			// if we have 4 numbers already, let's place on 4 and 10 if we are up.
-			if r.active() == 4 && r.Amount >= r.initAmount {
-				// only do this if we've loaded up.
-				// TODO: check pctHits threshold, ie. only do this if our hit
-				// % is less than a certain amount
-				if _, ok := r.comeBets[4]; !ok {
-					r.Amount -= r.minBet
-					r.placeBets[4] = r.minBet
-				} else {
-					if _, ok := r.comeBets[10]; !ok {
-						r.Amount -= r.minBet
-						r.placeBets[10] = r.minBet
-					}
-				}
-			}
+			//if r.active() == 4 && r.Amount >= r.initAmount {
+			//// only do this if we've loaded up.
+			//// TODO: check pctHits threshold, ie. only do this if our hit
+			//// % is less than a certain amount
+			//if _, ok := r.comeBets[4]; !ok {
+			//r.Amount -= r.minBet
+			//r.placeBets[4] = r.minBet
+			//} else {
+			//if _, ok := r.comeBets[10]; !ok {
+			//r.Amount -= r.minBet
+			//r.placeBets[10] = r.minBet
+			//}
+			//}
+			//}
 
 			if r.comeBet == 0 {
 				// if the point has not been established, we can't do comeBet
