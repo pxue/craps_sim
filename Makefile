@@ -14,4 +14,8 @@ all:
 print-%: ; @echo $*=$($*)
 
 run:
-	@(go run cmd/craps/main.go)
+	@read -r -p "output filename: " fname;             \
+	go run cmd/craps/main.go -file $${fname}
+
+run-debug:
+	@(go run cmd/craps/main.go -iter 1 -debug)

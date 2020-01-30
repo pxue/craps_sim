@@ -4,12 +4,16 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+
+	"github.com/pxue/craps/dice"
 )
 
 type Naive struct {
 	minBet   int
 	maxLoss  int
 	maxRolls int
+
+	gen dice.Generator
 }
 
 func NewNaive() *Naive {
@@ -34,7 +38,7 @@ func (n *Naive) getOddBet(point int) int {
 }
 
 func (n *Naive) simulate(r *Round) int {
-	roll := NewRoll()
+	roll := n.gen.Roll()
 	//fmt.Printf("round %d: %s (point %d)\n", r.n, roll, point)
 
 	switch roll.Value() {
@@ -150,5 +154,4 @@ func (n *Naive) Simulate() {
 	//}
 
 	//fmt.Printf("\n0W %.2f, 0L %.2f", float64(oW)/float64(comeout), float64(oL)/float64(comeout))
-	fmt.Println("\n")
 }

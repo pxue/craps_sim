@@ -2,21 +2,29 @@ package main
 
 import (
 	"encoding/csv"
+	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
 
 	"github.com/pxue/craps/simulate"
 )
 
-type Out struct {
-	Rolls  int
-	Hits   int
-	Amount int
-}
+var (
+	debug = flag.Bool("debug", false, "debug mode")
+)
 
 func main() {
-	s := simulate.SixEightCome{Debug: false}
+	var fname string
+	flag.StringVar(&fname, "file", "results.csv", "name of output file")
+
+	var iter int
+	flag.IntVar(&iter, "iter", 10000, "number of iterations to run")
+
+	flag.Parse()
+
+	s := simulate.NewSixEight(*debug)
 	// start with 300, play 10 rounds
 
 	perRound := 100
@@ -24,8 +32,16 @@ func main() {
 	maxRolls := 3 * 60 // 1 roll per minute, 3h max.
 	maxProfit := startAmount * 2
 
-	f, _ := os.Create("out.csv")
-	writer := csv.NewWriter(f)
+	ioWriter := io.WriteCloser(os.Stdout)
+	if !s.Debug {
+		var err error
+		ioWriter, err = os.Create(fname)
+		if err != nil {
+			log.Fatalf("file create: %v", err)
+		}
+	}
+
+	writer := csv.NewWriter(ioWriter)
 	writer.Write([]string{
 		"# of Rounds",
 		"# of Hits",
@@ -35,7 +51,7 @@ func main() {
 		"$ Profit",
 	})
 
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < iter; i++ {
 		amount := startAmount
 		aRolls := 0
 		aRound := 0
@@ -49,9 +65,10 @@ func main() {
 
 			aRolls += r.Rolls
 			amount += r.Amount
-			aHits += r.Hits
+			aHits += len(r.Hits)
 
 			s.Debugf("round %d finished with: %d.\n\n", aRound, amount)
+			s.Debugf("numbers we hit: %+v\n", r.Hits)
 			pctHits := float64(aHits*100) / float64(aRolls)
 			s.Debugf("\nafter %d rounds, bank $%d/%d, %d/%d (%d%%) rolls was hits.\n", aRound, amount, startAmount, aHits, aRolls, int(pctHits))
 		}
@@ -74,6 +91,5 @@ func main() {
 	if err := writer.Error(); err != nil {
 		log.Fatal(err)
 	}
-	f.Close()
-
+	ioWriter.Close()
 }

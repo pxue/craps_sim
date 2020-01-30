@@ -3,10 +3,24 @@ package simulate
 import (
 	"fmt"
 	"math"
+
+	"github.com/pxue/craps/dice"
 )
 
 type SixEightCome struct {
 	Debug bool
+	gen   dice.Generator
+}
+
+func NewSixEight(debug bool, gen ...dice.Generator) *SixEightCome {
+	s := &SixEightCome{
+		Debug: debug,
+		gen:   &dice.Simple{},
+	}
+	if len(gen) > 0 {
+		s.gen = gen[0]
+	}
+	return s
 }
 
 func (s *SixEightCome) Debugf(format string, args ...interface{}) {
@@ -29,9 +43,14 @@ func (s *SixEightCome) Debugf(format string, args ...interface{}) {
 func (s *SixEightCome) simulate(r *Round) {
 	for {
 		// stopping conditions.
-		roll := NewRoll()
+		roll := s.gen.Roll()
+		if roll == nil {
+			// mock roll. no more rolls.
+			return
+		}
 		s.Debugf("rolled: %s\n", roll)
 
+		r.Occurance[roll.Value()]++
 		r.Rolls++
 
 		// point established?
@@ -49,10 +68,24 @@ func (s *SixEightCome) simulate(r *Round) {
 			}
 
 			if r.point != nil {
-				// collect comebet win.
+				// collect and clean up comebet win.
+				s.Debugf("\twon come: +%d\n", r.comeBet*2)
 				r.Amount += (r.comeBet * 2)
+				r.comeBet = 0
 
-				// don't really need to clean up because we're exiting
+				// clean up passline Bet
+				r.passBet = 0
+
+				for k, _ := range r.comeBets {
+					// comebets lose
+					delete(r.comeBets, k)
+				}
+
+				// cleanup place bets
+				for k, _ := range r.placeBets {
+					delete(r.placeBets, k)
+				}
+
 				s.Debugf("\t7 rolled before %d\n\n", *r.point)
 				return
 			}
@@ -81,7 +114,6 @@ func (s *SixEightCome) simulate(r *Round) {
 			}
 		default:
 			// check place bet wins
-			// TODO: press place bets
 			if v, ok := r.placeBets[roll.Value()]; ok && v > 0 && r.point != nil {
 				pay := 0
 				switch roll.Value() {
@@ -96,8 +128,23 @@ func (s *SixEightCome) simulate(r *Round) {
 					pay = (7 * v / 6)
 				}
 				r.Amount += pay
-				r.Hits++
+				r.Hits[roll.Value()]++
 				s.Debugf("\twon place(%d): +%d\n", roll.Value(), pay)
+
+				// NOTE: let's test pressing the bets if we don't have a comeBet
+				// active.
+				// the check is that, every 2nd hit, we press.
+				//if r.Occurance[roll.Value()]%2 == 0 && r.comeBet == 0 {
+				//s.Debugf("\tpressing place(%d) by 1 unit.\n", roll.Value())
+				//switch roll.Value() {
+				//case 6, 8:
+				//r.Amount -= 6
+				//r.placeBets[roll.Value()] += 6
+				//default:
+				//r.Amount -= 5
+				//r.placeBets[roll.Value()] += 5
+				//}
+				//}
 			}
 
 			// 4, 5, 6, 8, 9, 10
@@ -109,9 +156,18 @@ func (s *SixEightCome) simulate(r *Round) {
 			} else {
 				// point exists, is it same as rolled value?
 				if *r.point == roll.Value() {
+					// pay pass line, reset to zero
+					r.Amount += 2 * r.passBet
+					r.passBet = 0
+
 					// clear the point
 					s.Debugf("\tpoint won! %d\n", *r.point)
 					r.point = nil
+
+					// make a pass line bet if applicable.
+					if r.active() < 4 {
+						r.bet(&r.passBet, r.minBet)
+					}
 				}
 			}
 
@@ -119,7 +175,7 @@ func (s *SixEightCome) simulate(r *Round) {
 			// TODO: come odds
 			if v, ok := r.comeBets[roll.Value()]; ok && v > 0 {
 				r.Amount += (v + v) // pays 1:1, collect original
-				r.Hits++
+				r.Hits[roll.Value()]++
 
 				// remove the come bet.
 				// >> let later code handle moving up come bet
@@ -133,7 +189,6 @@ func (s *SixEightCome) simulate(r *Round) {
 				// move the bet up to comeBets
 				// >> take back the already placed come bet.
 				r.comeBets[roll.Value()] = r.comeBet
-
 				// >> let later code handle re-betting
 				r.comeBet = 0
 			}
@@ -157,7 +212,7 @@ func (s *SixEightCome) simulate(r *Round) {
 			}
 
 			// Let's try something new to increase our hit%
-			// if we have 4 numbers already, let's place on 4 and 10 if we are up.
+			//if we have 4 numbers already, let's place on 4 and 10 if we are up.
 			//if r.active() == 4 && r.Amount >= r.initAmount {
 			//// only do this if we've loaded up.
 			//// TODO: check pctHits threshold, ie. only do this if our hit
@@ -181,26 +236,46 @@ func (s *SixEightCome) simulate(r *Round) {
 				// TODO: pass bet?
 			}
 
+			if r.passBet > 0 && r.point == nil {
+				// double check here. we've consolidated all the bets.
+				// if we've got 4 active numbers. let's not make a passBet
+				if r.active() >= 4 {
+					r.Amount += r.passBet
+					r.passBet = 0
+				}
+			}
+
 		}
 		s.Debugf("\tplace bets: %+v\n", r.placeBets)
 		s.Debugf("\tcome bets: %+v\n", r.comeBets)
 		s.Debugf("\tcome: %d\n", r.comeBet)
+		s.Debugf("\tpass: %d\n", r.passBet)
+		if r.point != nil {
+			s.Debugf("\tpoint: %d\n", *r.point)
+		}
 		s.Debugf("\tamount: %d\n\n", r.Amount)
 	}
 }
 
-func (s *SixEightCome) Simulate(amount int) *Round {
-	r := &Round{
-		placeBets:  map[int]int{},
-		comeBets:   map[int]int{},
-		minBet:     15,
-		initAmount: amount,
-		Amount:     amount, // amount per shooter
+func (s *SixEightCome) Simulate(amount int, init ...*Round) *Round {
+	var r *Round
+	if len(init) > 0 && init[0] != nil {
+		r = init[0]
+	} else {
+		r = &Round{
+			placeBets:  map[int]int{},
+			comeBets:   map[int]int{},
+			minBet:     15,
+			initAmount: amount,
+			Amount:     amount, // amount per shooter
+			Occurance:  map[int]int{},
+			Hits:       map[int]int{},
+		}
 	}
 	s.simulate(r)
 
 	s.Debugf("shooter finished with $%d.\nwe hit %d times out of %d rolls.\ncost per roll(%.2f)\n",
-		r.Amount, r.Hits, r.Rolls,
+		r.Amount, len(r.Hits), r.Rolls,
 		(float64(amount)-float64(r.Amount))/float64(r.Rolls),
 	)
 

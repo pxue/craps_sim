@@ -18,9 +18,10 @@ type Round struct {
 	won        bool
 
 	// expose
-	Rolls  int // number of rolls we're on
-	Hits   int // number of times a roll hit us
-	Amount int // bank
+	Occurance map[int]int // count of times a value occured
+	Hits      map[int]int // number of times a roll hit us
+	Rolls     int         // number of rolls we're on
+	Amount    int         // bank
 }
 
 func (r *Round) bet(dest *int, a int) {
@@ -29,7 +30,11 @@ func (r *Round) bet(dest *int, a int) {
 }
 
 func (r *Round) active() int {
-	return len(r.placeBets) + len(r.comeBets)
+	c := len(r.placeBets) + len(r.comeBets)
+	if r.passBet != 0 && r.point != nil {
+		c = c + 1
+	}
+	return c
 }
 
 func (r *Round) setPoint(p int) {
