@@ -1,0 +1,94 @@
+<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->
+<VerticalLayout
+    id="betting_sheet"
+    width="500"
+    height="300"
+    allowDragging="1"
+    visibility="host"
+    returnToOriginalPositionWhenReleased="0">
+    <TableLayout rowBackgroundColor="#ffffff">
+      <Row preferredHeight="50">
+          <Cell columnSpan="6"><Text>Place Bets</Text></Cell>
+      </Row>
+      <Row preferredHeight="50">
+          <Cell columnSpan="6">
+            <Dropdown id="place_bet_players" onValueChanged="onSelectPlayer">
+              <Option>select a player</Option>
+            </Dropdown>
+          </Cell>
+      </Row>
+      <Row>
+        <Cell><Toggle id="place_bet_4" zonetype="place" zonevalue="4" onValueChanged="onTogglePlaceBet">Place 4</Toggle></Cell>
+        <Cell><Toggle id="place_bet_5" zonetype="place" zonevalue="5" onValueChanged="onTogglePlaceBet">Place 5</Toggle></Cell>
+        <Cell><Toggle id="place_bet_6" zonetype="place" zonevalue="6" onValueChanged="onTogglePlaceBet">Place 6</Toggle></Cell>
+        <Cell><Toggle id="place_bet_8" zonetype="place" zonevalue="8" onValueChanged="onTogglePlaceBet">Place 8</Toggle></Cell>
+        <Cell><Toggle id="place_bet_9" zonetype="place" zonevalue="9" onValueChanged="onTogglePlaceBet">Place 9</Toggle></Cell>
+        <Cell><Toggle id="place_bet_10" zonetype="place" zonevalue="10" onValueChanged="onTogglePlaceBet">Place 10</Toggle></Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <InputField
+            id="place_bet_4_value"
+            for="place_bet_4"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+        <Cell>
+          <InputField
+            id="place_bet_5_value"
+            for="place_bet_5"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+        <Cell>
+          <InputField
+            id="place_bet_6_value"
+            for="place_bet_6"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+        <Cell>
+          <InputField
+            id="place_bet_8_value"
+            for="place_bet_8"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+        <Cell>
+          <InputField
+            id="place_bet_9_value"
+            for="place_bet_9"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+        <Cell>
+          <InputField
+            id="place_bet_10_value"
+            for="place_bet_10"
+            interactable="false"
+            onValueChanged="onPlaceBetValue"
+            characterValidation="Integer"
+            placeholder="0" />
+        </Cell>
+
+      </Row>
+      <Row>
+        <Cell columnSpan="6"><Text id="place_bet_status" /></Cell>
+      </Row>
+      <Row>
+        <Cell columnSpan="6"><Button onClick="onSubmitBets">Submit Bets</Button></Cell>
+      </Row>
+
+  </TableLayout>
+
+</VerticalLayout>
