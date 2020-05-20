@@ -1,0 +1,1435 @@
+{
+  "SaveName": "Game2",
+  "GameMode": "Game1",
+  "Date": "5/18/2020 7:58:48 PM",
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Table": "Table_RPG",
+  "Sky": "Sky_Museum",
+  "Note": "",
+  "Rules": "",
+  "Grid": {
+    "Type": 0,
+    "Lines": false,
+    "Color": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0
+    },
+    "Opacity": 0.75,
+    "ThickLines": false,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 2.0,
+    "ySize": 2.0,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Lighting": {
+    "LightIntensity": 0.54,
+    "LightColor": {
+      "r": 1.0,
+      "g": 0.9804,
+      "b": 0.8902
+    },
+    "AmbientIntensity": 1.3,
+    "AmbientType": 0,
+    "AmbientSkyColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientEquatorColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "AmbientGroundColor": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "ReflectionIntensity": 1.0,
+    "LutIndex": 0,
+    "LutContribution": 1.0
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": false,
+    "Hiding": 0,
+    "HandTransforms": [
+      {
+        "Color": "Red",
+        "Transform": {
+          "posX": -15.1108065,
+          "posY": 8.207994,
+          "posZ": -20.1076221,
+          "rotX": 0.0,
+          "rotY": 0.0,
+          "rotZ": 0.0,
+          "scaleX": 11.7811794,
+          "scaleY": 9.174497,
+          "scaleZ": 4.87123871
+        }
+      },
+      {
+        "Color": "Yellow",
+        "Transform": {
+          "posX": -30.2150211,
+          "posY": 8.207994,
+          "posZ": 10.17524,
+          "rotX": 0.0,
+          "rotY": 90.0,
+          "rotZ": 0.0,
+          "scaleX": 11.717638,
+          "scaleY": 9.174497,
+          "scaleZ": 4.954953
+        }
+      },
+      {
+        "Color": "Purple",
+        "Transform": {
+          "posX": 30.25128,
+          "posY": 8.207994,
+          "posZ": 9.59069252,
+          "rotX": 0.0,
+          "rotY": 270.0,
+          "rotZ": 0.0,
+          "scaleX": 11.7176323,
+          "scaleY": 9.174497,
+          "scaleZ": 4.954953
+        }
+      },
+      {
+        "Color": "Blue",
+        "Transform": {
+          "posX": 15.4749184,
+          "posY": 8.207994,
+          "posZ": 19.8365288,
+          "rotX": 0.0,
+          "rotY": 179.8,
+          "rotZ": 0.0,
+          "scaleX": 11.85897,
+          "scaleY": 9.174497,
+          "scaleZ": 4.91241646
+        }
+      },
+      {
+        "Color": "White",
+        "Transform": {
+          "posX": 15.1961479,
+          "posY": 8.207994,
+          "posZ": -20.1400986,
+          "rotX": 0.0,
+          "rotY": 0.0,
+          "rotZ": 0.0,
+          "scaleX": 11.78117,
+          "scaleY": 9.17449951,
+          "scaleZ": 4.87123871
+        }
+      },
+      {
+        "Color": "Green",
+        "Transform": {
+          "posX": -15.1927767,
+          "posY": 8.207994,
+          "posZ": 19.787817,
+          "rotX": 0.0,
+          "rotY": 180.0,
+          "rotZ": 0.0,
+          "scaleX": 11.78117,
+          "scaleY": 9.174497,
+          "scaleZ": 4.87123871
+        }
+      },
+      {
+        "Color": "Pink",
+        "Transform": {
+          "posX": 30.10358,
+          "posY": 8.207994,
+          "posZ": -8.449126,
+          "rotX": 0.0,
+          "rotY": 270.0,
+          "rotZ": 0.0,
+          "scaleX": 11.7176285,
+          "scaleY": 9.174497,
+          "scaleZ": 4.954953
+        }
+      },
+      {
+        "Color": "Orange",
+        "Transform": {
+          "posX": -30.247818,
+          "posY": 8.207994,
+          "posZ": -8.822588,
+          "rotX": 0.0,
+          "rotY": 90.0,
+          "rotZ": 0.0,
+          "scaleX": 11.7176418,
+          "scaleY": 9.174497,
+          "scaleZ": 4.954953
+        }
+      }
+    ]
+  },
+  "Turns": {
+    "Enable": false,
+    "Type": 0,
+    "TurnOrder": [],
+    "Reverse": false,
+    "SkipEmpty": false,
+    "DisableInteractions": false,
+    "PassTurns": true,
+    "TurnColor": ""
+  },
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  },
+  "DecalPallet": [],
+  "ObjectStates": [
+    {
+      "Name": "Custom_Board",
+      "Transform": {
+        "posX": 0.000666283653,
+        "posY": 0.947805762,
+        "posZ": 0.00280300016,
+        "rotX": 0.1960311,
+        "rotY": 180.001129,
+        "rotZ": 359.966644,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.7867647,
+        "g": 0.7867647,
+        "b": 0.7867647
+      },
+      "Locked": true,
+      "Grid": false,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "http://i.imgur.com/vWq3UGv.jpg",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 2.17541432
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "cedf80",
+      "AttachedSnapPoints": [
+        {
+          "Position": {
+            "x": 2.84431171,
+            "y": 0.5922439,
+            "z": 5.070107
+          }
+        },
+        {
+          "Position": {
+            "x": 0.34663862,
+            "y": 0.592243969,
+            "z": 5.03440475
+          }
+        },
+        {
+          "Position": {
+            "x": 4.544371,
+            "y": 0.592244,
+            "z": 4.95954132
+          }
+        },
+        {
+          "Position": {
+            "x": 3.97257757,
+            "y": 0.592243969,
+            "z": 5.069693
+          }
+        },
+        {
+          "Position": {
+            "x": 3.36219,
+            "y": 0.592243969,
+            "z": 5.02525759
+          }
+        },
+        {
+          "Position": {
+            "x": 1.95622754,
+            "y": 0.592244,
+            "z": 5.07855225
+          }
+        },
+        {
+          "Position": {
+            "x": 1.42248261,
+            "y": 0.5922439,
+            "z": 5.03014755
+          }
+        },
+        {
+          "Position": {
+            "x": 0.9554556,
+            "y": 0.5922439,
+            "z": 5.030126
+          }
+        },
+        {
+          "Position": {
+            "x": 2.0154376,
+            "y": 0.5922433,
+            "z": 6.915109
+          }
+        },
+        {
+          "Position": {
+            "x": 1.45554876,
+            "y": 0.592244267,
+            "z": 6.95218039
+          }
+        },
+        {
+          "Position": {
+            "x": 0.961413562,
+            "y": 0.592244267,
+            "z": 6.928788
+          }
+        },
+        {
+          "Position": {
+            "x": 0.349114954,
+            "y": 0.5922443,
+            "z": 6.92876
+          }
+        },
+        {
+          "Position": {
+            "x": 2.86276,
+            "y": 0.592244267,
+            "z": 6.975617
+          }
+        },
+        {
+          "Position": {
+            "x": 3.41060567,
+            "y": 0.592244148,
+            "z": 6.97564173
+          }
+        },
+        {
+          "Position": {
+            "x": 3.979936,
+            "y": 0.5922442,
+            "z": 6.95229959
+          }
+        },
+        {
+          "Position": {
+            "x": 4.566662,
+            "y": 0.592244267,
+            "z": 6.939574
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Die_6_Rounded",
+      "Transform": {
+        "posX": 7.965864,
+        "posY": 2.28742266,
+        "posZ": -5.59958649,
+        "rotX": 359.8072,
+        "rotY": 24.1513538,
+        "rotZ": 89.95006,
+        "scaleX": 1.5,
+        "scaleY": 1.5,
+        "scaleZ": 1.5
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.996078432,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "MaterialIndex": 1,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "PhysicsMaterial": {
+        "StaticFriction": 1.0,
+        "DynamicFriction": 0.7,
+        "Bounciness": 0.2,
+        "FrictionCombine": 0,
+        "BounceCombine": 0
+      },
+      "Rigidbody": {
+        "Mass": 1.125,
+        "Drag": 0.1,
+        "AngularDrag": 0.1,
+        "UseGravity": true
+      },
+      "GUID": "9859b7",
+      "RotationValues": [
+        {
+          "Value": 1,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 2,
+          "Rotation": {
+            "x": 90.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 3,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 90.0
+          }
+        },
+        {
+          "Value": 4,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -90.0
+          }
+        },
+        {
+          "Value": 5,
+          "Rotation": {
+            "x": -90.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 6,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -180.0
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Die_6_Rounded",
+      "Transform": {
+        "posX": 6.37435865,
+        "posY": 2.27306986,
+        "posZ": -9.524555,
+        "rotX": 270.195831,
+        "rotY": 189.638779,
+        "rotZ": 265.877167,
+        "scaleX": 1.5,
+        "scaleY": 1.5,
+        "scaleZ": 1.5
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.996078432,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "MaterialIndex": 1,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "PhysicsMaterial": {
+        "StaticFriction": 1.0,
+        "DynamicFriction": 0.7,
+        "Bounciness": 0.2,
+        "FrictionCombine": 0,
+        "BounceCombine": 0
+      },
+      "Rigidbody": {
+        "Mass": 1.125,
+        "Drag": 0.1,
+        "AngularDrag": 0.1,
+        "UseGravity": true
+      },
+      "GUID": "3c34ef",
+      "RotationValues": [
+        {
+          "Value": 1,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 2,
+          "Rotation": {
+            "x": 90.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 3,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 90.0
+          }
+        },
+        {
+          "Value": 4,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -90.0
+          }
+        },
+        {
+          "Value": 5,
+          "Rotation": {
+            "x": -90.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "Value": 6,
+          "Rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -180.0
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -8.00652,
+        "posY": 4.37,
+        "posZ": -6.892631,
+        "rotX": -0.00472728163,
+        "rotY": 0.1258854,
+        "rotZ": 359.881378,
+        "scaleX": 22.7758484,
+        "scaleY": 5.1,
+        "scaleZ": 2.04762769
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "f60857"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -9.243906,
+        "posY": 0.85,
+        "posZ": 8.781525,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.336216,
+        "scaleY": 0.1,
+        "scaleZ": 1.90865612
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "9233f0"
+    },
+    {
+      "Name": "Custom_Token",
+      "Transform": {
+        "posX": -20.3850021,
+        "posY": 2.016729,
+        "posZ": 8.487578,
+        "rotX": 358.569824,
+        "rotY": 180.348511,
+        "rotZ": 359.869263,
+        "scaleX": 0.547053337,
+        "scaleY": 1.0,
+        "scaleZ": 0.547053337
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": false,
+      "Snap": false,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://i.imgur.com/PCTKkgx.png",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomToken": {
+          "Thickness": 0.14500016,
+          "MergeDistancePixels": 15.0,
+          "StandUp": false,
+          "Stackable": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "PhysicsMaterial": {
+        "StaticFriction": 0.0,
+        "DynamicFriction": 0.0,
+        "Bounciness": 0.0,
+        "FrictionCombine": 0,
+        "BounceCombine": 0
+      },
+      "Rigidbody": {
+        "Mass": 0.9245089,
+        "Drag": 0.1,
+        "AngularDrag": 0.1,
+        "UseGravity": true
+      },
+      "GUID": "916652"
+    },
+    {
+      "Name": "Custom_Token",
+      "Transform": {
+        "posX": -20.4159126,
+        "posY": 1.86910546,
+        "posZ": 8.488072,
+        "rotX": 0.20011948,
+        "rotY": 180.249359,
+        "rotZ": 179.9668,
+        "scaleX": 0.547053337,
+        "scaleY": 1.0,
+        "scaleZ": 0.547053337
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": false,
+      "Snap": false,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "https://i.imgur.com/I9CJlt5.png",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomToken": {
+          "Thickness": 0.150000155,
+          "MergeDistancePixels": 15.0,
+          "StandUp": false,
+          "Stackable": true
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "PhysicsMaterial": {
+        "StaticFriction": 0.0,
+        "DynamicFriction": 0.0,
+        "Bounciness": 0.0,
+        "FrictionCombine": 0,
+        "BounceCombine": 0
+      },
+      "Rigidbody": {
+        "Mass": 0.9245089,
+        "Drag": 0.1,
+        "AngularDrag": 0.1,
+        "UseGravity": true
+      },
+      "JointFixed": {
+        "ConnectedBodyGUID": "916652",
+        "EnableCollision": false,
+        "Axis": {
+          "x": 1.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "Anchor": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "ConnectedAnchor": {
+          "x": 0.0571242832,
+          "y": -0.147500038,
+          "z": -0.007294016
+        },
+        "BreakForce": "Infinity",
+        "BreakTorgue": "Infinity"
+      },
+      "GUID": "edf005"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -6.954216,
+        "posY": 4.37,
+        "posZ": 0.6151339,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 20.0810833,
+        "scaleY": 5.1,
+        "scaleZ": 1.97214961
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "21d30a"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -6.06334162,
+        "posY": 4.37,
+        "posZ": -2.64,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 17.5983963,
+        "scaleY": 5.1,
+        "scaleZ": 2.335333
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "a9a479"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -13.0578928,
+        "posY": 4.37,
+        "posZ": 3.199605,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.50828528,
+        "scaleY": 5.1,
+        "scaleZ": 1.20368314
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "38214d"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -5.540202,
+        "posY": 4.37,
+        "posZ": 3.17812419,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.21266842,
+        "scaleY": 5.1,
+        "scaleZ": 1.0955987
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "0895d2"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -1.78659868,
+        "posY": 4.37,
+        "posZ": 3.22,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.54909658,
+        "scaleY": 5.1,
+        "scaleZ": 1.12277985
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "5ef559"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": 1.96125972,
+        "posY": 4.37,
+        "posZ": 3.23522282,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.286093,
+        "scaleY": 5.1,
+        "scaleZ": 1.03128219
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "bd98a8"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": 5.72523975,
+        "posY": 4.37,
+        "posZ": 3.15,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.5750773,
+        "scaleY": 5.1,
+        "scaleZ": 1.01663661
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "5074bc"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -6.48896551,
+        "posY": 4.37,
+        "posZ": -9.290878,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 20.0672379,
+        "scaleY": 5.1,
+        "scaleZ": 1.75304222
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "9713cf"
+    },
+    {
+      "Name": "ScriptingTrigger",
+      "Transform": {
+        "posX": -9.260286,
+        "posY": 4.37,
+        "posZ": 3.16,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 3.34039354,
+        "scaleY": 5.1,
+        "scaleZ": 1.15803146
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.509803951
+      },
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "932f69"
+    },
+    {
+      "Name": "ChipStack",
+      "Transform": {
+        "posX": 16.6526241,
+        "posY": 3.68901539,
+        "posZ": -20.1400986,
+        "rotX": 5.58159252E-09,
+        "rotY": 9.050555E-08,
+        "rotZ": -6.918287E-07,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "MaterialIndex": -1,
+      "MeshIndex": 1000,
+      "Number": 2,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "18c6de"
+    },
+    {
+      "Name": "ChipStack",
+      "Transform": {
+        "posX": 13.7396736,
+        "posY": 5.68901539,
+        "posZ": -20.1400986,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "MaterialIndex": -1,
+      "MeshIndex": 100,
+      "Number": 20,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "5f678e"
+    },
+    {
+      "Name": "ChipStack",
+      "Transform": {
+        "posX": 15.1961479,
+        "posY": 5.789016,
+        "posZ": -20.1400986,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "MaterialIndex": -1,
+      "MeshIndex": 500,
+      "Number": 4,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "e3e584"
+    },
+    {
+      "Name": "ChipStack",
+      "Transform": {
+        "posX": 16.6526222,
+        "posY": 5.88901567,
+        "posZ": -20.1400986,
+        "rotX": 0.0,
+        "rotY": 0.0,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": true,
+      "MaterialIndex": -1,
+      "MeshIndex": 1000,
+      "Number": 2,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "GUID": "159905"
+    }
+  ],
+  "LuaScript": "local chipDenom = {\n    [1000] = { t = 'Chip_1000' },\n    [500] = { t = 'Chip_500' },\n    [100] = { t = 'Chip_100' },\n    [50] = { t = 'Chip_50' },\n    [10] = { t = 'Chip_10' },\n}\nlocal puckPos = {\n    [0] = { pos = {-20.00, 2, 8.37} },\n    [4] = {pos = {-13.00, 2, 8.37}},\n    [5] = {pos = {-9.30, 2, 8.37}},\n    [6] = {pos = {-5.60, 2, 8.37}},\n    [8] = {pos = {-1.90, 2, 8.37}},\n    [9] = {pos = {2.00, 2, 8.37}},\n    [10] = {pos = {5.8, 2, 8.5}},\n}\nlocal dices = {}\nlocal diceSum = 0\nlocal point -- current point\nlocal puck -- the puck obj\n\nlocal bettingFor\nlocal numplayers = 0\nlocal players = { } -- the player obj\nlocal bettingZones = {}\n\n--------------------------- [[\n-- event handlers\n--------------------------- ]]\nfunction onObjectRandomize( obj, color )\n    if (obj.tag == 'Dice') and (not randomized) then\n        randomized = true\n        diceSum = 0\n        broadcastToAll(players[color].name .. ': dice is out!')\n        startLuaCoroutine(Global, 'diceRoll')\n    end\nend\n\nfunction onObjectEnterScriptingZone(zone, obj)\n    if not isChips(obj) then\n        return\n    end\n    bz = bettingZones[zone.getGUID()]\n    assignZoneBet(bz, obj, 'enter')\nend\n\nfunction onObjectLeaveScriptingZone(zone, obj)\n    if not isChips(obj) then\n        return\n    end\n    bz = bettingZones[zone.getGUID()]\n    assignZoneBet(bz, obj, 'leave')\nend\n\nfunction onLoad()\n    dices[1] = getObjectFromGUID('3c34ef')\n    dices[2] = getObjectFromGUID('9859b7')\n    puck = getObjectFromGUID('916652')\n    puck.setPositionSmooth(puckPos[0].pos, false, true)\n\n    -- initialize betting zones\n    initializeZones()\n\n    for i, ref in ipairs(Player.getPlayers()) do\n        players[ref.color] = {\n            color = ref.color,\n            name = ref.steam_name,\n            ref = ref,\n            index = i,\n            bettingSheet = {}\n        }\n        numplayers = numplayers + 1\n\n        -- remove all hand object\n        for _, obj in pairs(ref.getHandObjects()) do\n            if isChips(obj) then\n                obj.destruct()\n            end\n        end\n\n        spawnStartingChips(ref)\n    end\n\n    startLuaCoroutine(Global, 'addPlayerToBetSheet')\nend\n\nfunction addPlayerToBetSheet()\n    -- update player dropdown in betting sheet\n    xml = UI.getXmlTable()\n    dropdown = xml[1].children[1].children[2].children[1].children[1]\n    options = dropdown.children\n    for _, ref in ipairs(Player.getPlayers()) do\n        table.insert(options, {\n            tag = \"Option\",\n            value = ref.steam_name,\n        })\n    end\n    UI.setXmlTable(xml)\n\n    return 1\nend\n\n--------------------------- [[\n-- game logic\n--------------------------- ]]\n\nfunction diceRoll()\n    diceSum = 0;\n\n    while not dices[1].resting do\n        coroutine.yield(0)\n    end\n\n    while not dices[2].resting do\n        coroutine.yield(0)\n    end\n\n    diceSum = dices[1].getValue() + dices[2].getValue()\n    broadcastToAll('rolled: ' .. diceSum)\n\n    if (diceSum == 7) or (diceSum == 11) then\n        if point then\n            if (diceSum == 7) then\n                -- reset the point\n                broadcastToAll('sevened out!')\n                point = nil\n\n                puck.setPositionSmooth(puckPos[0].pos, false, true)\n                -- destroy all chips except comeLine\n                for key, zone in pairs(bettingZones) do\n                    if key == 'comeLine' then\n                        payZoneBets(bettingZones['comeLine'])\n                    elseif key == 'place' then\n                        for _, placeZone in pairs(zone) do\n                            destroyZoneBets(placeZone)\n                            resetBettingSheet()\n                            for _, p in pairs(players) do\n                                p.bettingSheet = {}\n                            end\n                        end\n                    else\n                        destroyZoneBets(zone)\n                    end\n                end\n            else\n                -- eleven was rolled\n                -- pay field\n                payZoneBets(bettingZones['field'])\n                -- pay comeline\n                payZoneBets(bettingZones['comeLine'])\n            end\n        else\n            broadcastToAll('front line winners!')\n\n            -- if no point established\n            -- pay come line\n            payZoneBets(bettingZones['comeLine'])\n\n            -- pay passline\n            payZoneBets(bettingZones['passLine'])\n\n            -- pay field if 11\n            if (diceSum == 11) then\n                payZoneBets(bettingZones['field'])\n            end\n        end\n    elseif (diceSum == 2) or (diceSum == 3) or (diceSum == 12) then\n        if not point then\n            -- lose pass line, lose come / pay field\n            destroyZoneBets(bettingZones['passLine'])\n        end\n        -- always pay field\n        payZoneBets(bettingZones['field'])\n    else\n        -- 4, 5, 6, 8, 9, 10\n        if not point then\n            broadcastToAll('point established')\n\n            point = diceSum\n            puck.setPositionSmooth(puckPos[diceSum].pos, false, true)\n\n            lockZoneChips(bettingZones['passLine'])\n            -- TODO: allow ON place bets\n        else\n            if (diceSum == point) then\n                broadcastToAll('point won! puck is OFF')\n                point = nil\n                puck.setPositionSmooth(puckPos[0].pos, false, true)\n\n                -- passline\n                payZoneBets(bettingZones['passLine'])\n                unlockZoneChips(bettingZones['passLine'])\n\n                -- passline odds\n                payZoneBets(bettingZones['passLineOdds'])\n            end\n\n            -- pay place bets\n            payPlaceZoneBets()\n            -- TODO: update come bets\n        end\n\n        -- pay field bets\n        if (diceSum == 4) or (diceSum == 9) or (diceSum == 10) then\n            payZoneBets(bettingZones['field'])\n        elseif (diceSum == 6) or (diceSum == 8) or (diceSum == 5) then\n            destroyZoneBets(bettingZones['field'])\n        end\n    end\n\n    randomized = false\n    coroutine.yield(1)\nend\n\n--------------------------- [[\n-- chip related functions\n--------------------------- ]]\nfunction isChips(obj)\n    return (obj.tag == 'Chip') or (obj.tag == 'ChipStack')\nend\n\n-- calculate the least amount of chips needed\n-- to the given value\nfunction chipDemonimator(value)\n    -- must be multiples of 10\n    if value % 10 != 0 then\n        return {}\n    end\n\n    chips = { 1000, 500, 100, 50, 10 }\n    ret = {}\n    i = 1\n\n    while not chipDenom[value] do\n        v = chips[i]\n        while value > v do\n            value = value - v\n            table.insert(ret, v)\n        end\n        i = i+1\n    end\n\n    if chipDenom[value] then\n        table.insert(ret, value)\n    end\n\n    return ret\nend\n\nfunction spawnChip(value, zone, player)\n    pos = payZonePosition(zone, player.index)\n    chipV = chipDenom[value]\n    chip = spawnObject({\n        type = chipV.t,\n        position = pos,\n    })\n    chip.setDescription(player.name)\n    chip.use_hands = true\nend\n\nfunction spawnChipInHand(value, player)\n    t = player.ref.getHandTransform()\n    chipV = chipDenom[value]\n    chip = spawnObject({\n        type = chipV.t,\n        position = t.position,\n    })\n    chip.use_hands = true\nend\n\nfunction payZonePosition(zone, index)\n    scale = zone.ref.getScale()\n    zp = zone.ref.getPosition()\n    startx = zp.x - (scale.x / 2)\n    dx = (index-1) * (scale.x / math.max(numplayers, 1))\n    -- TODO: dy = 0\n    return { x = startx + dx, y = zp.y, z = zp.z }\nend\n\nfunction destroyZoneBets(zone)\n    for _, obj in pairs(zone.ref.getObjects()) do\n        if isChips(obj) then\n            obj.destroy()\n        end\n    end\n    zone.bets = {}\nend\n\nfunction payPlaceZoneBets()\n    zone = bettingZones['place'][diceSum]\n    for color, bet in pairs(zone.bets) do\n        if bet.value then\n            hand_value = 0 -- value send to the hand\n            if (diceSum == 4) or (diceSum == 10) then\n                -- 9 to 5\n                hand_value = 9 * bet.value / 5\n            elseif (diceSum == 5) or (diceSum == 9) then\n                -- 7 to 5\n                hand_value = 7 * bet.value / 5\n            elseif (diceSum == 6) or (diceSum == 8) then\n                -- 7 to 6\n                hand_value = 7 * bet.value / 6\n            end\n            if hand_value > 0 then\n                print(string.format('give player %s: %d', color, hand_value))\n                -- TODO: is rounded up to nearest 10 due to chip value\n                for _, c in pairs(chipDemonimator(math.ceil(hand_value/10)*10)) do\n                    spawnChipInHand(c, player)\n                end\n            end\n        end\n    end\nend\n\nfunction payZoneBets(zone)\n    for _, ref in pairs(zone.ref.getObjects()) do\n        if isChips(ref) then\n            ref.destruct()\n        end\n    end\n\n    for color, value in pairs(zone.bets) do\n        player = players[color]\n        next_value = 0\n        print('player ' .. color .. ' amount  ' .. value .. ' in ' .. zone.zonetype)\n\n        if (value > 0) then\n            if zone.zonetype == 'passLine' then\n                -- pays 1 : 1\n                next_value = value + value\n            elseif zone.zonetype == 'comeLine' then\n                -- pays 1 : 1\n                next_value = value + value\n            elseif (zone.zonetype == 'field') then\n                if (diceSum == 2) then\n                    -- pays double, 2 to 1\n                    next_value = value * 3\n                elseif (diceSum == 12) then\n                    -- pays triple, 3 to 1\n                    next_value = value * 4\n                else\n                    -- pays 1 to 1\n                    next_value = value * 2\n                end\n            elseif (zone.zonetype == 'passLineOdds') then\n                if (diceSum == 4) or (diceSum == 10) then\n                    -- 2 to 1\n                    next_value = value * 3\n                elseif (diceSum == 5) or (diceSum == 9) then\n                    -- 3 to 2\n                    next_value = value + (value * 3 / 2)\n                elseif (diceSum == 6) or (diceSum == 8) then\n                    -- 6 to 5\n                    next_value = value + (6 * value / 5)\n                end\n            end\n        end\n\n        if next_value > 0 then\n            print('player ' .. color .. ' next  ' .. next_value .. ' in ' .. zone.zonetype)\n            for _, c in pairs(chipDemonimator(next_value)) do\n                spawnChip(c, zone, player)\n            end\n            zone.bets[player.color] = next_value\n        end\n    end\nend\n--------------------------- [[\n-- Player management\n--------------------------- ]]\n\nfunction groupHand(player)\n    group(player.getHandObjects())\nend\n\nfunction onPlayerConnect(player)\n    broadcastToAll(string.format('%s joined', player))\n    --spawStartingChips(player)\nend\n\nfunction spawnStartingChips(player)\n    t = player.getHandTransform()\n\n    for i=1,20 do\n        chip = spawnObject({\n            type = 'Chip_100',\n            position = t.position,\n        })\n        chip.use_hands = true\n    end\n\n    for i=1,4 do\n        chip = spawnObject({\n            type = 'Chip_500',\n            position = t.position,\n        })\n        chip.use_hands = true\n    end\n\n    for i=1,2 do\n        chip = spawnObject({\n            type = 'Chip_1000',\n            position = t.position,\n        })\n        chip.use_hands = true\n    end\n\n    Wait.frames(function() groupHand(player) end, 50)\nend\n\n--------------------------- [[\n-- Zone management\n--------------------------- ]]\nfunction assignZoneBet(zone, obj, bettype)\n    if zone.zonetype == 'place' then\n        -- place bets are managed by host\n        return\n    end\n\n    if not zone.bets then\n        zone.bets = {}\n    end\n\n    if not obj.held_by_color then\n        return\n    end\n\n    if not zone.bets[obj.held_by_color] then\n        zone.bets[obj.held_by_color] = 0\n    end\n\n    -- lastly, if we programatically spawned the chip. check if the object\n    -- is already in zone\n    if bettype == 'enter' then\n        for _, exist in pairs(zone.ref.getObjects()) do\n            if obj.getGUID() == exist.getGUID() then\n                return\n            end\n        end\n    end\n\n    value = obj.getValue() * math.max(obj.getQuantity(), 1)\n    if bettype == 'leave' then\n      value = value * -1\n    end\n\n    zone.bets[obj.held_by_color] = math.max(zone.bets[obj.held_by_color] + value, 0)\nend\n\nfunction initializeZones()\n    bettingZones['passLine'] = {\n        zoneid = 'f60857',\n        zonetype = 'passLine',\n        ref = getObjectFromGUID('f60857'),\n        bets = {},\n    }\n    bettingZones['f60857'] = bettingZones['passLine']\n\n    bettingZones['passLineOdds'] = {\n        zoneid = '9713cf',\n        zonetype = 'passLineOdds',\n        ref = getObjectFromGUID('9713cf'),\n        bets = {},\n    }\n    bettingZones['9713cf'] = bettingZones['passLineOdds']\n\n    bettingZones['comeLine'] = {\n        zoneid = '21d30a',\n        zonetype = 'comeLine',\n        ref = getObjectFromGUID('21d30a'),\n        bets = {},\n    }\n    bettingZones['21d30a'] = bettingZones['comeLine']\n\n    bettingZones['field'] = {\n        zoneid = 'a9a479',\n        zonetype = 'field',\n        ref = getObjectFromGUID('a9a479'),\n        bets = {},\n    }\n    bettingZones['a9a479'] = bettingZones['field']\n\n    bettingZones['place'] = {\n        [4] = {\n            zoneid = '38214d',\n            zonetype = 'place',\n            zonevalue = 4,\n            ref = getObjectFromGUID('38214d'),\n            bets = {},\n        },\n        [5] = {\n            zoneid = '932f69',\n            zonetype = 'place',\n            zonevalue = 5,\n            ref = getObjectFromGUID('932f69'),\n            bets = {},\n        },\n        [6] = {\n            zoneid = '0895d2',\n            zonetype = 'place',\n            zonevalue = 6,\n            ref = getObjectFromGUID('0895d2'),\n            bets = {},\n        },\n        [8] = {\n            zoneid = '5ef559',\n            zonetype = 'place',\n            zonevalue = 8,\n            ref = getObjectFromGUID('5ef559'),\n            bets = {}\n        },\n        [9] = {\n            zoneid = 'bd98a8',\n            zonetype = 'place',\n            zonevalue = 9,\n            ref = getObjectFromGUID('bd98a8'),\n            bets = {},\n        },\n        [10] = {\n            zoneid = '5074bc',\n            zonetype = 'place',\n            zonevalue = 10,\n            ref = getObjectFromGUID('5074bc'),\n            bets = {},\n        },\n    }\n    bettingZones['38214d'] = bettingZones['place'][4]\n    bettingZones['932f69'] = bettingZones['place'][5]\n    bettingZones['0895d2'] = bettingZones['place'][6]\n    bettingZones['5ef559'] = bettingZones['place'][8]\n    bettingZones['bd98a8'] = bettingZones['place'][9]\n    bettingZones['5074bc'] = bettingZones['place'][10]\n\n    -- bettingZones[xxxx] = 'come4'\n    -- bettingZones[xxxx] = 'come5'\n    -- bettingZones[xxxx] = 'come6'\n    -- bettingZones[xxxx] = 'come8'\n    -- bettingZones[xxxx] = 'come9'\n    -- bettingZones[xxxx] = 'come10'\n    -- bettingZones[xxxx] = 'dontPassLine'\nend\n\nfunction lockZoneChips(zone)\n    for _, obj in pairs(zone.ref.getObjects()) do\n        if isChips(obj) then\n            obj.setLock(true)\n        end\n    end\nend\n\nfunction unlockZoneChips(zone)\n    for _, obj in pairs(zone.ref.getObjects()) do\n        if isChips(obj) then\n            obj.setLock(false)\n        end\n    end\nend\n\n--------------------------- [[\n-- UI management\n--------------------------- ]]\n\nfunction getBettingSheetUI()\n    -- update player dropdown in betting sheet\n    xml = UI.getXmlTable()\n    dropdown = xml[1].children[1].children[2].children[1].children[1]\n    placeBets = xml[1].children[1].children[3].children\n    placeBetValues = xml[1].children[1].children[4].children\n    return {\n        players = dropdown,\n        placeBets = placeBets,\n        placeBetValues = placeBetValues,\n    }\nend\n\nfunction resetBettingSheet()\n    UI.setAttribute('place_bet_4', 'isOn', false)\n    UI.setAttributes('place_bet_4_value', { text = 0, interactable = 'false'})\n    UI.setAttribute('place_bet_5', 'isOn', false)\n    UI.setAttributes('place_bet_5_value', { text = 0, interactable = 'false'})\n    UI.setAttribute('place_bet_6', 'isOn', false)\n    UI.setAttributes('place_bet_6_value', { text = 0, interactable = 'false'})\n    UI.setAttribute('place_bet_8', 'isOn', false)\n    UI.setAttributes('place_bet_8_value', { text = 0, interactable = 'false'})\n    UI.setAttribute('place_bet_9', 'isOn', false)\n    UI.setAttributes('place_bet_9_value', { text = 0, interactable = 'false'})\n    UI.setAttribute('place_bet_10', 'isOn', false)\n    UI.setAttributes('place_bet_10_value', { text = 0, interactable = 'false'})\nend\n\nfunction onSelectPlayer(_, value, id)\n    resetBettingSheet()\n    for color, p in pairs(players) do\n        if p.name == value then\n            bettingFor = color\n            for key, value in pairs(players[bettingFor].bettingSheet) do\n                UI.setAttribute(key, 'isOn', value.isOn)\n                UI.setAttribute(string.format('%s_value', key), 'text', value['amount'])\n                if (value.isOn) then\n                    UI.setAttribute(string.format('%s_value', key), 'interactable', 'true')\n                end\n            end\n        end\n    end\nend\n\nfunction onTogglePlaceBet(_, value, id)\n    if not players[bettingFor] then\n        return\n    end\n    players[bettingFor].bettingSheet[id] = {\n        isOn = value,\n        amount = 0,\n    }\n    valueID = string.format(\"%s_value\", id)\n    UI.setAttribute(valueID, 'interactable', value)\n    if value == 'False' then\n        UI.setAttribute(valueID, 'text', 0)\n    end\n\n    -- TODO: if there is zonebet for bettingFor,\n    -- return the value into players hand\nend\n\nfunction onPlaceBetValue(_, value, id)\n    betFor = UI.getAttribute(id, 'for')\n    bet = players[bettingFor].bettingSheet[betFor]\n    if value == nil or value == '' then\n        value = 0\n    end\n    if bet and bet.isOn then\n        bet['amount'] = tonumber(value)\n    end\nend\n\n-- only use for 'house' controlled place bets\nfunction onSubmitBets(_, value, id)\n    UI.setValue('place_bet_status', '-')\n    player = players[bettingFor]\n    for betField, bet in pairs(player.bettingSheet) do\n        zonetype = UI.getAttribute(betField, 'zonetype')\n        zonevalue = UI.getAttribute(betField, 'zonevalue')\n        zone = bettingZones['place'][tonumber(zonevalue)]\n\n        if bet.isOn and bet['amount'] > 0 then\n            if not zone['bets'][bettingFor] then\n                zone.bets[bettingFor] = {}\n            end\n\n            marker = zone['bets'][bettingFor].marker\n            if not marker then\n                position = payZonePosition(zone, player.index)\n                marker = spawnObject({\n                    type = 'Chip_100',\n                    position = position,\n                })\n            end\n            last = zone.bets[bettingFor].value or 0\n\n            marker.setDescription(\n                string.format('%s: %d on %s', player.name, bet.amount, zonevalue))\n\n            -- remove or add chips into players hand\n            if last > bet['amount'] then\n                -- put chips back into players hands\n                for _, c in pairs(chipDemonimator(last - bet['amount'])) do\n                    spawnChipInHand(c, player)\n                end\n            else\n                -- remove chip from players hand\n                \n            end\n\n            zone.bets[bettingFor] = {\n                value = bet['amount'],\n                marker = marker\n            }\n            print(string.format('set bet %d (last %d) on %s for %s', bet['amount'], last, betField, bettingFor))\n        else\n            print(string.format('removing bet %d from %s for %s', bet['amount'], betField, bettingFor))\n            zone.bets[bettingFor].marker.destruct()\n            zone.bets[bettingFor] = {}\n        end\n    end\nend\n",
+  "LuaScriptState": "",
+  "XmlUI": "<!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->\n<VerticalLayout\n    id=\"betting_sheet\"\n    width=\"500\"\n    height=\"300\"\n    allowDragging=\"1\"\n    visibility=\"host\"\n    returnToOriginalPositionWhenReleased=\"0\">\n    <TableLayout rowBackgroundColor=\"#ffffff\">\n      <Row preferredHeight=\"50\">\n          <Cell columnSpan=\"6\"><Text>Place Bets</Text></Cell>\n      </Row>\n      <Row preferredHeight=\"50\">\n          <Cell columnSpan=\"6\">\n            <Dropdown id=\"place_bet_players\" onValueChanged=\"onSelectPlayer\">\n              <Option>select a player</Option>\n            </Dropdown>\n          </Cell>\n      </Row>\n      <Row>\n        <Cell><Toggle id=\"place_bet_4\" zonetype=\"place\" zonevalue=\"4\" onValueChanged=\"onTogglePlaceBet\">Place 4</Toggle></Cell>\n        <Cell><Toggle id=\"place_bet_5\" zonetype=\"place\" zonevalue=\"5\" onValueChanged=\"onTogglePlaceBet\">Place 5</Toggle></Cell>\n        <Cell><Toggle id=\"place_bet_6\" zonetype=\"place\" zonevalue=\"6\" onValueChanged=\"onTogglePlaceBet\">Place 6</Toggle></Cell>\n        <Cell><Toggle id=\"place_bet_8\" zonetype=\"place\" zonevalue=\"8\" onValueChanged=\"onTogglePlaceBet\">Place 8</Toggle></Cell>\n        <Cell><Toggle id=\"place_bet_9\" zonetype=\"place\" zonevalue=\"9\" onValueChanged=\"onTogglePlaceBet\">Place 9</Toggle></Cell>\n        <Cell><Toggle id=\"place_bet_10\" zonetype=\"place\" zonevalue=\"10\" onValueChanged=\"onTogglePlaceBet\">Place 10</Toggle></Cell>\n      </Row>\n      <Row>\n        <Cell>\n          <InputField\n            id=\"place_bet_4_value\"\n            for=\"place_bet_4\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n        <Cell>\n          <InputField\n            id=\"place_bet_5_value\"\n            for=\"place_bet_5\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n        <Cell>\n          <InputField\n            id=\"place_bet_6_value\"\n            for=\"place_bet_6\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n        <Cell>\n          <InputField\n            id=\"place_bet_8_value\"\n            for=\"place_bet_8\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n        <Cell>\n          <InputField\n            id=\"place_bet_9_value\"\n            for=\"place_bet_9\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n        <Cell>\n          <InputField\n            id=\"place_bet_10_value\"\n            for=\"place_bet_10\"\n            interactable=\"false\"\n            onValueChanged=\"onPlaceBetValue\"\n            characterValidation=\"Integer\"\n            placeholder=\"0\" />\n        </Cell>\n\n      </Row>\n      <Row>\n        <Cell columnSpan=\"6\"><Text id=\"place_bet_status\" /></Cell>\n      </Row>\n      <Row>\n        <Cell columnSpan=\"6\"><Button onClick=\"onSubmitBets\">Submit Bets</Button></Cell>\n      </Row>\n\n  </TableLayout>\n\n</VerticalLayout>",
+  "VersionNumber": "v12.4"
+}
